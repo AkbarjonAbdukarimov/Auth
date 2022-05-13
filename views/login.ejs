@@ -1,20 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
-  </head>
-  <body>
-    <h1>Login</h1>
+<% layout('partials/boilerplate')%>
 
-    <form action="/login" method="post">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" />
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" />
-      <button>submit</button>
-    </form>
-  </body>
-</html>
+<h3>Welcome!</h3>
+<h2 class="mb-5 text-bold">Sign In</h2>
+<form
+  id="loginForm"
+  action="/login"
+  method="post"
+  class="d-flex flex-column align-items-center justify-content-center"
+>
+  <div class="mb-4 form-group w-100">
+    <label class="mb-3" for="username">User name</label>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      class="form-control px-4 py-3"
+      placeholder="Enter your user name"
+    />
+  </div>
+
+  <div class="mb-4 form-group w-100">
+    <label class="mb-3" for="password">Password</label>
+    <input
+      type="password"
+      name="password"
+      id="password"
+      class="form-control px-4 py-3"
+      placeholder="Enter your Password"
+    />
+  </div>
+
+  <a
+    class="text-muted text-decoration-none align-self-end mb-4"
+    href="/login/forget"
+  >
+    Forgot Password?</a
+  >
+  <button type="submit" class="mb-4 w-100 px-4 py-3">Login</button>
+  <p class="text-muted align-self-center">
+    Don't have an Account?
+    <b
+      ><a class="text-dark text-decoration-none" href="/register"
+        >Register</a
+      ></b
+    >
+  </p>
+</form>

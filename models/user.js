@@ -10,7 +10,12 @@ const UserSchema = new Schema({
   },
   confirmed: { type: Boolean, default: false },
   token: { type: String },
-  expiresAt: { type: Date, default: Date.now() + 15 * 60 * 1000 },
+  created: { type: String, default: Date.now() },
+  expireAt: {
+    type: Date,
+    default: Date.now() + 16 * 60 * 1000,
+    expires: Date.now() + 16 * 60 * 1000,
+  },
 });
 UserSchema.plugin(passportLocalMongoose);
 
